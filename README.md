@@ -1,2 +1,2 @@
-# Supporter N2K maintenant !
-bitcoins ou ethertum
+# Soutenir N2K !
+bitcoin ou ethertum
