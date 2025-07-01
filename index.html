@@ -179,13 +179,13 @@ function createBitcoin() {
     bitcoin.classList.add('bitcoin');
     bitcoin.style.left = Math.random() * (window.innerWidth - 40) + 'px';
 
-    const duration = (3 + Math.random() * 5); // entre 3 et 8 secondes
+    const duration = (3 + Math.random() * 5); 
     bitcoin.style.animationDuration = duration + 's';
     document.body.appendChild(bitcoin);
 
     setTimeout(() => {
         bitcoin.remove();
-    }, duration * 1000); // suppression après la durée exacte de l'animation
+    }, duration * 1000); 
 }
 
   setInterval(createBitcoin, 200);
