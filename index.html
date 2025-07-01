@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -92,21 +91,21 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-image: url('bitcoin.jpeg');
+    background-image: url('bitcoin.jpg');
     background-size: cover;
     animation: fall linear infinite;
     z-index: 5;
   }
-  @keyframes fall {
-    0% {
-      transform: translateY(-50px) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
-    }
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
   }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 1;
+  }
+}
 </style>
 </head>
 <body>
@@ -116,11 +115,11 @@
   <p>Choisiser une crypto</p>
   <div class="btn-container">
     <button id="btnBitcoin">
-      <img src="bitcoin.jpeg" alt="Bitcoin logo" />
+      <img src="bitcoin.jpg" alt="Bitcoin logo" />
       Bitcoin
     </button>
     <button id="btnEtherum">
-      <img src="ethertum.jpeg" alt="Etherum logo" />
+      <img src="ethertum.jpg" alt="Etherum logo" />
       Ethertum
     </button>
   </div>
@@ -175,17 +174,19 @@
     copyToClipboard(keys.etherum);
   });
 
-  function createBitcoin() {
+function createBitcoin() {
     const bitcoin = document.createElement('div');
     bitcoin.classList.add('bitcoin');
     bitcoin.style.left = Math.random() * (window.innerWidth - 40) + 'px';
-    bitcoin.style.animationDuration = (3 + Math.random() * 5) + 's';
+
+    const duration = (3 + Math.random() * 5); // entre 3 et 8 secondes
+    bitcoin.style.animationDuration = duration + 's';
     document.body.appendChild(bitcoin);
 
     setTimeout(() => {
-      bitcoin.remove();
-    }, 8000);
-  }
+        bitcoin.remove();
+    }, duration * 1000); // suppression après la durée exacte de l'animation
+}
 
   setInterval(createBitcoin, 200);
 </script>
