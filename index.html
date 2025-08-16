@@ -21,7 +21,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 320px;
-    height: 220px;
+    height: 170px; /* réduit pour enlever le vide de Litecoin */
     background-color: #222;
     border: 1px solid orange;
     z-index: 1000;
@@ -75,7 +75,7 @@
   }
   #copyMsg {
     position: fixed;
-    top: calc(40vh + 240px); 
+    top: calc(40vh + 190px); /* ajusté avec la nouvelle hauteur */
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255,165,0,0.9);
@@ -128,13 +128,9 @@
       </button>
       <button id="btnEtherum">
         <img src="ethertum.jpeg" alt="Etherum logo" />
-        Ethertum
+        Etherum
       </button>
     </div>
-    <button id="btnLitecoin">
-      <img src="litecoin.jpeg" alt="Litecoin logo" />
-      Litecoin 
-    </button>
   </div>
 </div>
 
@@ -143,13 +139,11 @@
 <script>
   const btnBitcoin = document.getElementById('btnBitcoin');
   const btnEtherum = document.getElementById('btnEtherum');
-  const btnLitecoin = document.getElementById('btnLitecoin');
   const copyMsg = document.getElementById('copyMsg');
 
   const keys = {
     bitcoin: 'bc1qm998aq8e2dlnzvq99avaneaj6zhaqzf3kzwa42',
-    etherum: '0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40',
-    litecoin: 'ltc1q39vakyxyww4v8rl6ttdqnkrsah975390jpp8zl'
+    etherum: '0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40'
   };
 
   function showCopyMessage() {
@@ -187,10 +181,6 @@
 
   btnEtherum.addEventListener('click', () => {
     copyToClipboard(keys.etherum);
-  });
-
-  btnLitecoin.addEventListener('click', () => {
-    copyToClipboard(keys.litecoin); // Copy Litecoin address
   });
 
   function createBitcoin() {
