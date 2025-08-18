@@ -21,7 +21,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 320px;
-    height: 170px; /* réduit pour enlever le vide de Litecoin */
+    height: 220px;
     background-color: #222;
     border: 1px solid orange;
     z-index: 1000;
@@ -75,7 +75,7 @@
   }
   #copyMsg {
     position: fixed;
-    top: calc(40vh + 190px); /* ajusté avec la nouvelle hauteur */
+    top: calc(40vh + 240px); 
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255,165,0,0.9);
@@ -131,6 +131,10 @@
         Etherum
       </button>
     </div>
+    <button id="btnSolana">
+      <img src="IMG_8769.png" alt="Solana logo" />
+      Solana
+    </button>
   </div>
 </div>
 
@@ -139,11 +143,13 @@
 <script>
   const btnBitcoin = document.getElementById('btnBitcoin');
   const btnEtherum = document.getElementById('btnEtherum');
+  const btnSolana = document.getElementById('btnSolana');
   const copyMsg = document.getElementById('copyMsg');
 
   const keys = {
     bitcoin: 'bc1qz87u4hr6pv8yzq96h6vjcutz3nrgw06gkdxzvw',
-    etherum: '0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40'
+    etherum: '0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40',
+    solana:  'FgvSNeEGXiuvBBUPgEJ8M5M4oW739AKMh8GmSZtY2qPK'
   };
 
   function showCopyMessage() {
@@ -181,6 +187,10 @@
 
   btnEtherum.addEventListener('click', () => {
     copyToClipboard(keys.etherum);
+  });
+
+  btnSolana.addEventListener('click', () => {
+    copyToClipboard(keys.solana);
   });
 
   function createBitcoin() {
